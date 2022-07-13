@@ -1,0 +1,28 @@
+{%  extends 'comilon/main.html' %}
+
+{% block content %}
+
+<div class="container forget-password">
+	<div class="row">
+		<div class="col-md-12 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="text-center">
+						<h2 class="text-center">Registrar Proveedor</h2>
+						<form id="register-form" role="form" autocomplete="off" class="form" method="post">
+							{% csrf_token %}
+							{% for field in form %}
+								<div class="mb-3">
+									<label for="exampleInputPassword1" class="form-label">{{field.label}}</label><br>
+									{{field}}
+								</div>
+							{% endfor %}
+							<button type="submit" class="btn btn-lg btn-primary btn-block btnForget">Registrar</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

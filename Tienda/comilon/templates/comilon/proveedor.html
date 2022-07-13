@@ -1,0 +1,26 @@
+{%  extends 'comilon/main.html' %}
+{% block content %}
+
+<div class="row">
+	<div class="col-12">
+		<div class="card card-body align-items-center m-5 pt-5">
+			<h5>Proveedor: {{proveedor.nombre}}</h5>
+			<hr>
+		</div>
+	</div>
+	
+	{% for producto in productos %}
+	<div class="col-lg-4">
+        <div class="card card-body box-element producto">
+			<h6><strong>Producto: {{producto.nombre}}</strong></h6>
+			<hr>
+			<p>{{producto.descripcion}}</p>
+			<h4>Fecha de creación: {{producto.fec_creado}}</h4>
+			<h4><strong>Precio: ${{producto.precio|floatformat:0}}</strong></h4>
+
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock content %}
